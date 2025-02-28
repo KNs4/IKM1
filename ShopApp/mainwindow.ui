@@ -1,0 +1,1453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>880</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Онлайн Магазин</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(27, 27, 27);
+
+QTabWidget::tab-bar {
+    alignment: center;
+    left: 5px;
+}
+
+QTabBar::tab {
+    background:  rgb(255, 255, 255);
+    border: 2px solid #FFFFFF;
+    min-width: 100px;
+        min-height: 30px;
+    padding: 3px 3px;
+    margin-right: 3px;
+}
+
+QTabBar::tab:selected {
+    background: #red;
+    font-weight: bold;
+}
+
+QTabBar::tab:!selected {
+    margin-top: 3px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>1300</width>
+        <height>600</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1300</width>
+        <height>600</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(27, 27, 27);</string>
+      </property>
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="users_tab">
+       <attribute name="title">
+        <string>Пользователи</string>
+       </attribute>
+       <widget class="QTableView" name="users_table">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>971</width>
+          <height>261</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+qproperty-alignment: AlignCenter; </string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="add_row_user">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>440</y>
+          <width>231</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Добавить пользователя</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="remove_row_user">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>440</y>
+          <width>241</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Удалить пользователя</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="client_info">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>280</y>
+          <width>271</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Информация о пользователе</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="user_id">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>370</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Номер пользователя</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="first_name">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>370</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white; /* Тонкая серая рамка */
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; 
+background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Имя </string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="last_name">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>450</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; 
+background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Фамилия </string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="email">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>450</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; 
+background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Почта</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="phone">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>370</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; 
+background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Номер телефона</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="adres">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>450</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; 
+background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Адрес</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="save_users">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>350</y>
+          <width>481</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Сохранить пользователя</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_saved_users">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>280</y>
+          <width>691</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Окно ошибок. Тут выходят ошибки с таблицами&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(190, 190, 190);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>350</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Номер</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_2">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>350</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Имя</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_3">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>430</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Фамилия</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_4">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>430</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Почта</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_5">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>350</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Телефон</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_6">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>430</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border: 0px solid white;
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Адрес</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="products_tab">
+       <attribute name="title">
+        <string>Товары</string>
+       </attribute>
+       <widget class="QTableView" name="products_table">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>971</width>
+          <height>261</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="credit_info">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>280</y>
+          <width>271</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Информация о товаре</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="add_row_products">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>440</y>
+          <width>231</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Добавить товар</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="remove_row_products">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>440</y>
+          <width>241</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Удалить товар</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="product_id">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>370</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Номер товара</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="name">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>370</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Название товара</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="description">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>450</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Описание</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="price">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>410</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Цена товара</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="stock">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>450</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Количество товара</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_saved_product">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>280</y>
+          <width>691</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(190, 190, 190);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="save_products">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>350</y>
+          <width>481</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Сохранить товар</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_7">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>430</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Кол.товара</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_8">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>430</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Описание</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_9">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>390</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Цена</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_10">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>350</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Номер</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_11">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>350</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Название</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="orders_tab">
+       <attribute name="title">
+        <string>Заказы</string>
+       </attribute>
+       <widget class="QTableView" name="orders_table">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>971</width>
+          <height>261</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="payment_info">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>280</y>
+          <width>271</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Информация о заказах</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="add_row_orders">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>440</y>
+          <width>231</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Добавить заказ</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="remove_row_orders">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>440</y>
+          <width>241</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Удалить заказ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="order_date">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>410</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white; /* Тонкая серая рамка */
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Дата заказа</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="status">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>370</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Статус заказа</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="user_id_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>450</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Номер пользователя &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="order_id">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>370</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Номер заказа </string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="save_orders">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>350</y>
+          <width>481</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Сохранить заказ</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_saved_orders">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>280</y>
+          <width>691</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(190, 190, 190);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_12">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>350</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Номер заказа </string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_13">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>430</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;ID пользователя&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_14">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>430</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Номер товара</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_15">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>350</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white; /* Тонкая серая рамка */
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Статус</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="info_label_16">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>390</y>
+          <width>100</width>
+          <height>19</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>19</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0px solid white; /* Тонкая серая рамка */
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Дата заказа</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="product_id_2">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>450</y>
+          <width>150</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid white;
+background-color: rgb(255, 255, 255);
+font-size: 16px;
+qproperty-alignment: AlignCenter; </string>
+        </property>
+        <property name="text">
+         <string>Номер товара</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>ОнлайнМагазин</string>
+    </property>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>users_table</tabstop>
+  <tabstop>add_row_user</tabstop>
+  <tabstop>remove_row_user</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
